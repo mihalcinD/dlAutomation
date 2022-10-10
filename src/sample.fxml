@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <top>
+      <HBox id="header" fx:id="header" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="600.0" styleClass="header" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <Pane maxHeight="25.0" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: white;">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="22.0" layoutX="24.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@eurovia-logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="40.0" prefWidth="530.0">
+               <children>
+                  <Text fill="WHITE" layoutX="234.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: 900;" text="Automatizácia dodacích listov" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="BOTTOM_CENTER" maxHeight="150.0" onMouseClicked="#printDLEurovia" prefHeight="150.0" prefWidth="220.0" spacing="2.0" styleClass="companyBox">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logoEurovia.png" />
+                     </image>
+                  </ImageView>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e20025" height="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="170.0" />
+                  <Text fill="#004489" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: 900;" text="Ďalší DL" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox alignment="TOP_CENTER" maxHeight="0.0" prefWidth="60.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <children>
+                  <Text fx:id="dlNumberElement" fill="#7b7b7b" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: 900;" text="893" />
+                  <Text fx:id="capacityElement" fill="#7b7b7b" layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: 900;" text="10 m3" />
+               </children>
+            </VBox>
+            <VBox alignment="BOTTOM_CENTER" maxHeight="150.0" onMouseClicked="#printDLStrabag" prefHeight="150.0" prefWidth="220.0" spacing="2.0" styleClass="companyBox">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logoStrabag.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e20025" height="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="170.0" />
+                  <Text fill="#004489" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: 900;" text="Ďalší DL" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="600.0" styleClass="footer" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="600.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="25.0" onMouseClicked="#changeSettings" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@settings.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <TextField fx:id="input" layoutX="107.0" layoutY="7.0" onInputMethodTextChanged="#checkInputChange" onKeyTyped="#checkInputChange" prefHeight="30.0" prefWidth="113.0" promptText="Číslo DL" styleClass="input" visible="false" />
+                  <ImageView fx:id="saveBtn" fitHeight="25.0" fitWidth="25.0" layoutX="484.0" layoutY="10.0" onMouseClicked="#saveFromInput" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@save.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <TextField fx:id="inputCapacity" layoutX="107.0" layoutY="44.0" onInputMethodTextChanged="#checkInputChange" onKeyTyped="#checkInputChange" prefHeight="30.0" prefWidth="113.0" promptText="Objem" styleClass="input" visible="false" />
+                  <Text fill="#ffffff80" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-font-weight: 900;" text="Vytvoril Dávid Mihalčin | mihalcindavid@gmail.com" AnchorPane.rightAnchor="8.062890625000023" AnchorPane.topAnchor="55.8134765625" />
+                  <TextField fx:id="inputConstruction" layoutX="271.0" layoutY="7.0" onInputMethodTextChanged="#checkInputChange" onKeyTyped="#checkInputChange" prefHeight="30.0" prefWidth="198.0" promptText="Stavba" styleClass="input" visible="false" />
+                  <Text fx:id="textNmb" fill="#ffffff80" layoutX="56.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12; -fx-font-weight: 900;" text="Číslo DL:" visible="false" />
+                  <Text fx:id="textCapacity" fill="#ffffff80" layoutX="63.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12; -fx-font-weight: 900;" text="Objem:" visible="false" />
+                  <Text fx:id="textConstruction" fill="#ffffff80" layoutX="226.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12; -fx-font-weight: 900;" text="Stavba:" visible="false" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

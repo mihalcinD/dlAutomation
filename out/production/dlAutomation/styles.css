@@ -1,0 +1,29 @@
+.header{
+    -fx-background-color: #004489;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color: #E20025;
+    -fx-border-insets: -3px;
+}
+.footer{
+    -fx-background-color: #004489;
+    -fx-border-width: 3 0 0 0;
+    -fx-border-color: #E20025;
+    -fx-border-insets: -3px;
+}
+.input
+{
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-text-fill: white;
+}
+.companyBox
+{
+    -fx-border-color: #989898;
+    -fx-border-width: 2;
+}
+.companyBox:hover
+{
+    -fx-border-color: #E20025;
+    -fx-border-width: 2;
+}
